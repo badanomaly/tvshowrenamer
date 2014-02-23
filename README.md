@@ -1,5 +1,6 @@
 tvshowrenamer
 =============
+<pre>
 This python script Edits the file names of 
 a TV show directory to the format
 Show Name-seasonNoXepisodeno-episodeTitle
@@ -44,3 +45,4 @@ to recognise their season number and episode number values.
 
 This script also stores a log file for all the renames in the directory
 so that you can revert manually the renames that turn out to be wrong
+</pre>
