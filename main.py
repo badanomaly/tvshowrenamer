@@ -63,9 +63,9 @@ def newName(showid,season,episode):
 		return ret
 	return -3
 if __name__ == '__main__':        
-	allShowsDir = "C:/Users/Mohit Gahlot/Videos/TV Shows"
+	allShowsDir = ""
+	#Edit this variable to point to you Tv shows Directory
 	showNameList = [x for x in os.listdir(allShowsDir)]
-	print(newName(34454,1,100))
 	for show in showNameList:
 		showDir = allShowsDir+'/'+ show
 		showid = findShowId(show)
