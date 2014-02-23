@@ -57,10 +57,12 @@ def newName(showid,season,episode):
 		return ret, newShowName
 	return -3,""
 if __name__ == '__main__':        
-	allShowsDir = "C:/Users/Mohit Gahlot/Videos/TV Shows"
+	allShowsDir = ""
+	#Edit this variable to point to you Tv shows Directory
+	# example "C:/Users/Your Name/Videos/TV Shows"
+	
 	f = open(allShowsDir+'/log.txt','w');
 	renVal = 0
-	#Edit this variable to point to you Tv shows Directory
 	showNameList = [x for x in os.listdir(allShowsDir)]
 	for show in showNameList:
 		showDir = allShowsDir+'/'+ show
@@ -71,8 +73,7 @@ if __name__ == '__main__':
 		for root,dirs,files in os.walk(showDir):
 			for fyle in files:
 				temp = seasonEpisode(fyle)
-				if temp != -2:
-					print("For", fyle ,temp[0],temp[1])
+
 				if temp == -2:
 					print("file: "+fyle+' in show: '+show+" doesn't seem to match to any episode")
 					print("Please check its name contains format SxxExx or xxXxx format")
@@ -88,11 +89,17 @@ if __name__ == '__main__':
 				
 				if not os.path.exists(allShowsDir+'/'+newShowName):
 					print("Folder for show "+newShowName+ " not found, Creating one now..")
-					os.makedirs(allShowsDir+'/'+newShowName)
-				
+					try:
+						os.makedirs(allShowsDir+'/'+newShowName)
+					except Exception:
+						print("Error in creating folder");
 				if not os.path.exists(allShowsDir+'/'+newShowName+'/season '+str(temp[0])):
 					print("Folder for season "+str(temp[0])+ " not found in show"+ newShowName+" , Creating one now..")
-					os.makedirs(allShowsDir+'/'+newShowName+'/season '+str(temp[0]))
+					try:
+						os.makedirs(allShowsDir+'/'+newShowName+'/season '+str(temp[0]))
+					except Exception:
+						print("Error in creating folder");
+						
 				oldpath = (root+'/'+fyle).replace("\\",'/')
 				newpath = allShowsDir+'/'+newShowName+'/season '+str(temp[0])+'/'+newFyle+newFyleExtension;
 
