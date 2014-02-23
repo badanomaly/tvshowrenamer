@@ -5,13 +5,13 @@ a TV show directory to the format
 Show Name-seasonNoXepisodeno-episodeTitle
 
 The required directory structure for this script to work
-TVShows/
-	Show1/
-		folder1/
-		folder2/
-			folder3/
-				/file4
-			file3
+TVShows/<br/>
+	Show1/<br/>
+		folder1/<br/>
+		folder2/<br/>
+			folder3/<br/>
+				/file4<br/>
+			file3<br/>
 		file1
 		file2
 	Show2/
